@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place ID Geocoder</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=places&v=weekly"
+      defer
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div style="display: none">
+      <input
+        id="pac-input"
+        class="controls"
+        type="text"
+        placeholder="Enter a location"
+      />
+    </div>
+    <!-- /** hide it **/ -->
+    <div>
+    <form class="row g-3" id="initialForm">
+      <div class="col-auto">
+        does this place contain a hygenic public washroom? 
+      </div>
+      <div class="col-auto">
+        <button id="yesBtn" type="submit" class="btn btn-primary mb-3">Yes</button>
+      </div>
+      <div class="col-auto">
+        <button id="noBtn" type="submit" class="btn btn-primary mb-3">No</button>
+      </div>
+    </form>
+    <form class="row g-3" id="secondForm">
+      <div class="col-auto">
+        <input name="score" type="number"> 
+      </div>
+      <div class="col-auto">
+        please rate the place on a scale of 1 to 5 in terms of safety   
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">rate</button>
+      </div>
+    </form>
+  </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <span id="place-name" class="title"></span><br />
+      <strong>Place ID</strong>: <span id="place-id"></span><br />
+      <span id="place-address"></span>
+    </div>
+  </body>
+</html>
